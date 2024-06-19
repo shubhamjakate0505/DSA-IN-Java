@@ -1,0 +1,21 @@
+
+Formal parameter : -which are comes in Function Defination is called Formarl Paramerter.
+Actual parameter Or Arguments :- which are comes in Function Calling is called.
+ For eg.
+
+import java.util.*;
+public class Func{
+    public static void clc(int a,int b){  //Formal Paramerter
+     int sum=a+b;
+     System.out.println("Sum is "+sum);
+    }
+
+    public static void main(String args[]){
+      Scanner sc=new Scanner(System.in);
+      System.out.println("Enter Frist Number : -");
+      int a=sc.nextInt();
+      System.out.println("Enter Second  Number : -");
+      int b=sc.nextInt();
+      clc(10,20);                          //Atual or Arguments parameter
+    }
+}
