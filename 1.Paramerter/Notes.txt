@@ -1,5 +1,5 @@
 
-Formal parameter : -which are comes in Function Defination is called Formarl Paramerter.
+# Formal parameter : -which are comes in Function Defination is called Formarl Paramerter.
 Actual parameter Or Arguments :- which are comes in Function Calling is called.
  For eg.
 
