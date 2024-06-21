@@ -1,0 +1,9 @@
+# function overloading 
+Multiple Function With tha same name but different Parameter
+-type of paramerter
+-number of Parameter
+
+Eg: Calculator
+suppose we need to build Calculator so we make one fuctonn called multipy(int a,int b) it take
+two integer paramerter but we aslo want to calculate two flatoing number so we can make function
+multipy(float a,float b) same function name but diffparet parmeter
