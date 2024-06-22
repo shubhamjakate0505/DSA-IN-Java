@@ -1,0 +1,8 @@
+
+#Recursion:
+Recursion is a method of solving a computational Problum where the solution 
+depends on solution to smaller instance of the same problum.
+#using math f(f(x))
+1. Base case
+2. work
+3. inner function
