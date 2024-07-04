@@ -1,0 +1,7 @@
+#Array : - it is the Collection of similar data type placed in continguous memory location
+-can not br change in ru time excution
+
+Datatype arryname[]=new datatype[size];
+int marks[]=new int[50];
+int marks[]={12,3,34};
+int name[]={"shubam","kranti","rohan"}
