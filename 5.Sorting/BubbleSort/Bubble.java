@@ -16,7 +16,7 @@ public class Bubble{
             }
 
             
-    System.out.println("number:"+swap);
+    // System.out.println("number:"+swap);
         }
         
     }
@@ -27,9 +27,42 @@ public class Bubble{
         System.out.println();
         
     }
+    public static void selectionsort(int arr[]){
+        for(int i=0;i<arr.length-1;i++){//for the number of iteration
+            int minpos=i;// supose curr position
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[minpos]>arr[j])//agar mispos is grather than another variable to mera min variable nahi hai to update karo value
+                {
+                    minpos=j;
+                }
+            } 
+        //swap
+        int tepm=arr[minpos];
+        arr[minpos]=arr[i];
+        arr[i]=tepm;
+        }
+
+    }
+    public static void insertion(int arr[]){
+        for(int i=1;i<arr.length;i++){
+            int curr=arr[i];
+            int prev=i-1;
+            //fnding to current pos to insert
+            while(prev>=0 && arr[prev]>curr){
+                arr[prev+1]=arr[prev];
+                prev--;
+            }
+            //insertion
+            arr[prev+1]=curr;
+        }
+    }
+
     public static void main(String args[]){
-        int arr[]={5,4,3,2,1};
-        bubbleSort(arr);
+        int arr[]={5,4,1,3,2};
+        // bubbleSort(arr);
+        // selectionsort(arr);
+        insertion(arr);
+
         Printarray(arr);
     }
 }
