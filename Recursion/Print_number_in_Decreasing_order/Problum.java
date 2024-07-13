@@ -13,6 +13,6 @@ public class Problum{
 
     public static void main(String args[]){
         int n=10;
-        Desc(n);
+        Desc(n);//10
     }
 }
