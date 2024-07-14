@@ -1,6 +1,7 @@
 import java.util.*;
 public class occ{
     public static void idxocc(int arr[],int key,int i){
+        //
         if(i==arr.length){
         return;
     }   
