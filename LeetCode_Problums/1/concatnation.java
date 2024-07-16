@@ -1,25 +1,20 @@
-import java.util.Arrays;
+import java.util.*;
 
-class concatnation{
-    public int[] getConcatenation(int[] nums) {
-        int arr[] = new int[2 * nums.length];
-        for (int i = 0; i < nums.length; i++) {
+public class concatnation {
+    public static int[] getConcatenation(int nums[]) {
+        int n = nums.length;
+        int arr[] = new int[2 * n];
+        for (int i = 0; i < n; i++) {
             arr[i] = nums[i];
-            arr[i + nums.length] = nums[i];
+            arr[i + n] = nums[i];
         }
         return arr;
     }
-    
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-        
-        // Example input
-        int[] nums = {1, 2, 3};
-        
-        // Get the concatenated array
-        int[] result = solution.getConcatenation(nums);
-        
-        // Print the result
+
+    public static void main(String args[]) {
+        concatnation c1 = new concatnation();
+        int arr[] = {1, 2, 3};
+        int result[] = c1.getConcatenation(arr);
         System.out.println(Arrays.toString(result));
     }
 }

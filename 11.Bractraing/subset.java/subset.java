@@ -1,3 +1,6 @@
+
+//2^n subset
+
 import java.util.*;
 public class subset{
 
