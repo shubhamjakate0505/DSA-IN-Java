@@ -27,10 +27,6 @@ public class Sodu{
         }
         return true;
     }
-    
-    
-    
-    
     public static boolean sudokosolvr(int suduko[][],int row,int col){
         //base
         if(row==9){//getting final Solution 
