@@ -18,4 +18,7 @@
  - set(index,value) set element at index
  - Contains(value) Contains Element
  - .size() For the count length of array
-   Refer Opration Floder for the eg.
+ - Collection.sort()
+
+Refer Opration Floder for the eg.
+
