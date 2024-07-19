@@ -22,3 +22,7 @@
 
 Refer Opration Floder for the eg.
 
+# multi-dimensional ArrayList
+Unlike Arrays, we are not bound with the size of any row in Multidimensional collections. Therefore, if we want to use a Multidimensional architecture where we can create any number of objects dynamically in a row, then we should go for Multidimensional collections in java.
+
+ArrayList<ArrayList<Object>> a = new ArrayList<>();
