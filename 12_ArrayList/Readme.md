@@ -12,8 +12,8 @@
 
  # Opration
    
- - Add() element
- - Get() element 
+ - Add() add element
+ - Get() get element at specified index
  - remove() element
  - set(index,value) set element at index
  - Contains(value) Contains Element
