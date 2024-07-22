@@ -92,6 +92,29 @@ public class Linkedlist{
             size--;
             return val;
         }
+
+        public int RemoveLast(){
+            if(size==0){
+                System.out.println("LL is Empty");
+                return Integer.MIN_VALUE;
+            }else if(size==1){
+                int val=head.data;//isko delete karana hai
+                head=tail=null;
+                size=0;
+                return val;
+            }   
+            //prev=i=size-2
+            Node prev=head;
+            for(int i=0;i<size-2;i++){
+                prev=prev.next;
+            }
+            //when i'm standing at the idx size-2
+            int val=prev.next.data;//tail.data
+            prev.next=null;
+            tail=prev;
+            size--;
+            return val;
+        }
     public static void main(String args[]){
         Linkedlist l1=new Linkedlist();
         
@@ -105,6 +128,9 @@ public class Linkedlist{
         l1.RemoveFrist();
          l1.print();
         //System.out.println(l1.size);
+        l1.RemoveLast();
+        l1.print();
+        System.out.println(l1.size);
         
 
     }
