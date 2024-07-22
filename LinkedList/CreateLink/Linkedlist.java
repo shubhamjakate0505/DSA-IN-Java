@@ -11,10 +11,12 @@ public class Linkedlist{
 
     public static Node head;
     public static Node tail;
+    public static int size;//initail Zero values
     
     public void addFrist(int data){//method
         //step 1=create new node
         Node newnode=new Node(data);
+        size++;
         if(head==null){
             head=tail=newnode;
             return;
@@ -28,6 +30,7 @@ public class Linkedlist{
     public void addLast(int data){
         //1.create new node
         Node newnode=new Node(data);
+         size++;
         //if head==null than startig and ending node itself 
         if(head==null){
             head=tail=newnode;
@@ -60,6 +63,7 @@ public class Linkedlist{
         }
         //create new node
         Node newnode=new Node(data);
+         size++;
         Node temp=head;
         int i=0;
         while(i < idx-1){
@@ -72,22 +76,35 @@ public class Linkedlist{
         newnode.next=temp.next;
         temp.next=newnode;
         
-
-    }
-
+}
+    public int RemoveFrist(){
+        if(size==0){
+            System.out.println("LL is Empty");
+            return Integer.MIN_VALUE;
+        }else if(size==1){
+            int val=head.data;
+            head=tail=null;
+            size=0;
+            return val;
+        }
+            int val=head.data;
+            head=head.next;
+            size--;
+            return val;
+        }
     public static void main(String args[]){
         Linkedlist l1=new Linkedlist();
         
-        l1.addFrist(2);
-        
-        l1.addFrist(1);
-       
-        l1.addLast(3);
-       
+        l1.addFrist(2);        
+        l1.addFrist(1);      
+        l1.addLast(3); 
         l1.addLast(4);
         l1.add(2,9);
         l1.add(0,12);
         l1.print();
+        l1.RemoveFrist();
+         l1.print();
+        //System.out.println(l1.size);
         
 
     }
