@@ -130,6 +130,34 @@ public class Linkedlist{
             }
             return -1;
         }
+        public int helper(Node head,int key){
+            //base Case
+            if(head==null){
+                return -1;
+            }
+            if(head.data==key){//kay mere head ka deta key ke barabar hai to retun kardu head ka index 
+            //head's index always Zero idx
+                return 0;
+            }
+             //baki case mai muje track karna hai. kay helper method head ke next mai dhund pata hai mere key ko 
+            int idx=helper(head.next,key);
+            //agar nahi dhund paya to mera index -1 ho jayga
+            if(idx==-1){
+                return -1;
+            }
+            //agar dhundh liya to muje return karna hai idx+1
+            return idx+1;
+
+                
+            
+             
+
+
+
+        }
+        public int recursiveSerch(int key){
+            return helper(head,key);
+        }
     public static void main(String args[]){
         Linkedlist l1=new Linkedlist();
         
@@ -145,8 +173,8 @@ public class Linkedlist{
         //System.out.println(l1.size);
         l1.RemoveLast();
         l1.print();
-        System.out.println(l1.itrSearch(2));
-        System.out.println(l1.itrSearch(10));
+        System.out.println(l1.recursiveSerch(2));
+        System.out.println(l1.recursiveSerch(10));
         
 
     }
