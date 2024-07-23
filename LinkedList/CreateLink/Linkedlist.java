@@ -147,16 +147,28 @@ public class Linkedlist{
             }
             //agar dhundh liya to muje return karna hai idx+1
             return idx+1;
-
-                
-            
-             
-
-
-
-        }
+            }
         public int recursiveSerch(int key){
             return helper(head,key);
+        }
+
+        public void reverse(){
+            //head ke pahale wali value Null hothi hai hamesha
+            Node prev=null;
+            //tail ko main curr value karata hu q ki mai reverse kar rahu hu puri linked list
+            Node curr=tail=head;//head ki value tail mai assign hua hai tail ki value curr main store hue hai
+            Node next;
+
+            while(curr!=null){
+                //1 frist step
+                next=curr.next;
+                curr.next=prev;
+                prev=curr;
+                curr=prev;
+            }
+
+            //last main muje update karna hoth hai head ko previous mai
+            head=prev;
         }
     public static void main(String args[]){
         Linkedlist l1=new Linkedlist();
@@ -166,15 +178,17 @@ public class Linkedlist{
         l1.addLast(3); 
         l1.addLast(4);
         l1.add(2,9);
-        l1.add(0,12);
+        // l1.add(0,12);
         l1.print();
-        l1.RemoveFrist();
-         l1.print();
+        // l1.RemoveFrist();
+        //  l1.print();
         //System.out.println(l1.size);
-        l1.RemoveLast();
+        // l1.RemoveLast();
+        // l1.print();
+        l1.reverse();
         l1.print();
-        System.out.println(l1.recursiveSerch(2));
-        System.out.println(l1.recursiveSerch(10));
+        // System.out.println(l1.recursiveSerch(2));
+        // System.out.println(l1.recursiveSerch(10));
         
 
     }
