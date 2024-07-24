@@ -166,9 +166,34 @@ public class Linkedlist{
                 prev=curr;
                 curr=prev;
             }
-
             //last main muje update karna hoth hai head ko previous mai
             head=prev;
+        }
+
+        public void deleteNthfromEnd(int n){
+            //size calculation
+            int sz=0;
+            Node temp=head;
+            while(temp!=null){
+                temp=temp.next
+                sz++;
+            }
+            if(n==sz){
+                head=head.next;//removeFrist
+                return;
+            }
+
+            //baki cases mai muje sz-n tak pohchna hai
+            int i=1;
+            int idxToFind=sz-n;
+            Node prev =head//index suru hoga head 
+            while(i<idxToFind){
+                prev=prev.next;
+                i++;
+            }
+            prev.next=prev.next.next;
+            return;
+
         }
     public static void main(String args[]){
         Linkedlist l1=new Linkedlist();
