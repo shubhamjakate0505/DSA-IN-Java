@@ -202,17 +202,17 @@ public class Linkedlist{
 
     while(fast!=null && fast.next !=null){
         slow=slow.next;//1
-        fast=fast.next,next;//2
+        fast=fast.next.next;//2
     }
     return slow;
     }
 
     public boolean checkpalindrom(){
-        if(head==null || head.next!= null){//agar mari linked list khali hai or 1st node hai to return true karo
+        if(head==null || head.next== null){//agar mari linked list khali hai or 1st node hai to return true karo
             return true;
         }
             //step1-find mid
-            Node midnode=findMid(head);//middle node mil jayegi
+            Node midNode=findMid(head);//middle node mil jayegi
             //step2-reverse 2nd half
             Node prev=null;
             Node curr=midNode;
@@ -223,7 +223,17 @@ public class Linkedlist{
                 prev=curr;
                 curr=next;
             }
-
+        Node right=prev;//right half head
+        Node left=head;
+        //step3-check left half &right half
+        while(right!=null){ 
+            if(left.data!=right.data){
+                return false;
+            }
+            left=left.next;
+            right=right.next;
+        }
+        return true;
     }
 
     public static void main(String args[]){
@@ -243,8 +253,9 @@ public class Linkedlist{
         // l1.print();
         // l1.reverse();
         l1.print();
-        l1.deleteNthfromEnd(3);
-        l1.print();
+        System.out.println(l1.checkpalindrom());
+        // l1.deleteNthfromEnd(3);
+        // l1.print();
         // System.out.println(l1.recursiveSerch(2));
         // System.out.println(l1.recursiveSerch(10));
         
