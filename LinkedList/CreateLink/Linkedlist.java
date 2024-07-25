@@ -175,7 +175,7 @@ public class Linkedlist{
             int sz=0;
             Node temp=head;
             while(temp!=null){
-                temp=temp.next
+                temp=temp.next;
                 sz++;
             }
             if(n==sz){
@@ -186,7 +186,7 @@ public class Linkedlist{
             //baki cases mai muje sz-n tak pohchna hai
             int i=1;
             int idxToFind=sz-n;
-            Node prev =head//index suru hoga head 
+            Node prev =head;//index suru hoga head 
             while(i<idxToFind){
                 prev=prev.next;
                 i++;
@@ -195,6 +195,37 @@ public class Linkedlist{
             return;
 
         }
+    //Slow-fast Technics helper function
+    public Node findMid(Node head){
+    Node slow=head;//it take 1 steps at a time
+    Node fast=head;//it take 2 steps at a time
+
+    while(fast!=null && fast.next !=null){
+        slow=slow.next;//1
+        fast=fast.next,next;//2
+    }
+    return slow;
+    }
+
+    public boolean checkpalindrom(){
+        if(head==null || head.next!= null){//agar mari linked list khali hai or 1st node hai to return true karo
+            return true;
+        }
+            //step1-find mid
+            Node midnode=findMid(head);//middle node mil jayegi
+            //step2-reverse 2nd half
+            Node prev=null;
+            Node curr=midNode;
+            Node next;
+            while(curr!=null){
+                next=curr.next;
+                curr.next=prev;
+                prev=curr;
+                curr=next;
+            }
+
+    }
+
     public static void main(String args[]){
         Linkedlist l1=new Linkedlist();
         
@@ -204,13 +235,15 @@ public class Linkedlist{
         l1.addLast(4);
         l1.add(2,9);
         // l1.add(0,12);
-        l1.print();
+        // l1.print();
         // l1.RemoveFrist();
         //  l1.print();
         //System.out.println(l1.size);
         // l1.RemoveLast();
         // l1.print();
-        l1.reverse();
+        // l1.reverse();
+        l1.print();
+        l1.deleteNthfromEnd(3);
         l1.print();
         // System.out.println(l1.recursiveSerch(2));
         // System.out.println(l1.recursiveSerch(10));
