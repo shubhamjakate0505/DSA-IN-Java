@@ -245,7 +245,29 @@ public class Linkedlist{
                 return true;//Cycle Exit
             }
         }
-        retun false;
+        retun false;//Cycle Doesn't exit
+    }
+
+
+    public static void removecycle(){
+        //detect cycle
+        Node slow=head;
+        Node fast=head;
+        boolean cycle=false;
+        while(fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+            if(fast==slow){
+                cycle=true;//cycle find out
+                break;
+            }
+
+        }
+        if(cycle==false){
+            return;
+        }
+        //find meeting point
+        //remove cycle->last.next=null
     }
     public static void main(String args[]){
         Linkedlist l1=new Linkedlist();
