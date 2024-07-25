@@ -238,14 +238,14 @@ public class Linkedlist{
     public boolean isCycle(){
         Node slow=head;//head pointer start with head
         Node fast=head;
-        while(fast!=null && fast.next=null){
+        while(fast!=null && fast.next!=null){
             slow=slow.next;
             fast=fast.next.next;
             if(slow==fast){
                 return true;//Cycle Exit
             }
         }
-        retun false;//Cycle Doesn't exit
+        return false;//Cycle Doesn't exit
     }
 
 
@@ -261,13 +261,21 @@ public class Linkedlist{
                 cycle=true;//cycle find out
                 break;
             }
-
         }
         if(cycle==false){
             return;
         }
-        //find meeting point
+        //find meeting point        
+            slow=head;
+            Node prev=null;//jab loop khatm ho jayega tb last node ki value store ho jayegi prev mai
+            while(slow!=fast){//jab tak mere slow ki value fast tak nhi hothi
+            prev=fast;
+            slow=slow.next;
+            fast=fast.next;
+            }
+
         //remove cycle->last.next=null
+        prev.next=null;
     }
     public static void main(String args[]){
         Linkedlist l1=new Linkedlist();
