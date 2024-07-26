@@ -1,5 +1,7 @@
 import java.util.*;
 public class Linkedlist{
+   
+//  -------------------------Node-----------------------------------  
     public static class Node{
         int data;
         Node next;
@@ -8,11 +10,12 @@ public class Linkedlist{
             this.next=null;
         }
     }
+    
 
     public static Node head;
     public static Node tail;
     public static int size;//initail Zero values
-    
+//   --------------------------------------AddFrist---------------------------------  
     public void addFrist(int data){//method
         //step 1=create new node
         Node newnode=new Node(data);
@@ -40,6 +43,8 @@ public class Linkedlist{
         tail.next=newnode;
         tail=newnode;
     }
+
+// -------------------------------------------Print------------------------------------
     //printing linked list
     public void print(){
         //base case
@@ -54,6 +59,9 @@ public class Linkedlist{
         }
         System.out.println("null");
     }
+
+
+//    ----------------------------------------AddElementFrist-------------------------------- 
     //add ele at middle
     public void add(int idx,int data){
 
@@ -77,6 +85,7 @@ public class Linkedlist{
         temp.next=newnode;
         
 }
+// ----------------------------------------removeFirst-------------------------------- 
     public int RemoveFrist(){
         if(size==0){
             System.out.println("LL is Empty");
@@ -116,7 +125,7 @@ public class Linkedlist{
             return val;
         }
 
-
+// ---------------------------------------------search key---------------------------
         public int itrSearch(int key){
             Node temp=head;
             int i=0;
@@ -169,7 +178,7 @@ public class Linkedlist{
             //last main muje update karna hoth hai head ko previous mai
             head=prev;
         }
-
+// -------------------------------------------------------deleteNTh Node---------------------------------------------
         public void deleteNthfromEnd(int n){
             //size calculation
             int sz=0;
@@ -195,6 +204,9 @@ public class Linkedlist{
             return;
 
         }
+
+// -----------------------------------------------Check pendulam--------------------------------------
+
     //Slow-fast Technics helper function
     public Node findMid(Node head){
     Node slow=head;//it take 1 steps at a time
@@ -235,6 +247,7 @@ public class Linkedlist{
         }
         return true;
     }
+    // ------------------------------------------------------------------------------------------------------
     public boolean isCycle(){
         Node slow=head;//head pointer start with head
         Node fast=head;
@@ -248,7 +261,7 @@ public class Linkedlist{
         return false;//Cycle Doesn't exit
     }
 
-
+// -------------------------------------------------------------------------------------------------------
     public static void removecycle(){
         //detect cycle
         Node slow=head;
@@ -277,6 +290,52 @@ public class Linkedlist{
         //remove cycle->last.next=null
         prev.next=null;
     }
+// ---------------------------------mearge sort-------------------------------------------------------------
+    public Node margeSort(Node head){
+        //base case
+        if(head==null && head.next!=null){
+            //head ki value null ho jaye ya head.next ki value null ho jaye
+            //in that case my linkedlist already sorted us time muje return head karnar hai
+            return head;
+        }
+
+        //Findmid
+        Node mid=getmid();
+        //left and right ms
+
+        Node righthead=mid.next;//right half ka head that will be my mid ka next
+        mid.next=null;//mid ka next becomes null
+        Node newleft=margeSort(head);//Call For head which is my left half
+        Node newRight=margeSort(righthead);//call for righthead which is my right half
+
+        //merge
+
+        return mearge(newleft,newRight);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ------------------------------------------------------------------------------------------------------------
     public static void main(String args[]){
         Linkedlist l1=new Linkedlist();
         
