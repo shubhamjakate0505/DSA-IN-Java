@@ -328,6 +328,45 @@ public class Linkedlist{
             }
             return mergeLL.next;
           } 
+          public void Zigzag(){
+            //find mid
+            Node slow=head;
+            Node fast=head.next;
+            while(fast!=null && fast.next !=null){
+                slow=slow.next;
+                fast=fast.next.next;
+            }
+            Node mid=slow;
+
+
+            //reverse 2nd half
+
+            Node curr=mid.next;
+            mid.next=null;
+            Node prev=null;
+            Node next;
+            while(curr!=null){
+                next=curr.next;
+                curr.next=prev;
+                prev=curr;
+                curr=next;
+
+            }
+            Node left=head;
+            Node right=prev;
+            Node nextL,nextR;
+            //alter merge
+            while(left !=null && right != null){//jab take mera next null nhi hoth or right null nhi hotha tab tak
+                nextL=left.next;
+                left.next=right;
+                nextR=right.next;
+                right.next=nextL;
+
+
+                left=nextL;
+                right=nextR;
+            }
+          }
 
 
     public Node margeSort(Node head){
@@ -351,27 +390,6 @@ public class Linkedlist{
 
         return mearge(newleft,newRight);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // ------------------------------------------------------------------------------------------------------------
@@ -398,15 +416,17 @@ public class Linkedlist{
         // System.out.println(l1.recursiveSerch(2));
         // System.out.println(l1.recursiveSerch(10));
         // LinkedList<Integer> ll=new LinkedList<>();   
-        l1.addFrist(1);
-        l1.addFrist(2);
-        l1.addFrist(3);
-        l1.addFrist(4);
-        l1.addFrist(5);
+        l1.addLast(1);
+        l1.addLast(2);
+        l1.addLast(3);
+        l1.addLast(4);
+        l1.addLast(5);
+       
        
         l1.print();
+        l1.Zigzag();
         // System.out.println(ll);
-        l1.head=l1.margeSort(l1.head);
+        // l1.head=l1.margeSort(l1.head);
         l1.print();
         // System.out.println(ll);
 
