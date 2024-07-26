@@ -291,16 +291,55 @@ public class Linkedlist{
         prev.next=null;
     }
 // ---------------------------------mearge sort-------------------------------------------------------------
+//head ka mid chahiye
+    private Node getmid(Node head){
+            Node slow=head;
+            Node fast=head.next;
+            while(fast!=null && fast.next!=null){
+                slow=slow.next;
+                fast=fast.next.next;
+            }
+            return slow;//my mid
+    }
+
+    private Node mearge(Node head1,Node head2){
+            Node mergeLL=new Node(-1);//New linked list with dumy node -1
+            Node temp=mergeLL;//temp which point to head of my mergeLL
+        while(head1!=null && head1!=null){//jab tak dono null nahi hothe tab tak loop chalega
+            if(head1.data<=head2.data){
+                temp.next=head1;//temp ke andar store kar du head1 ki value
+                head1=head1.next;//update head1 to head1.next
+                temp=temp.next;//update temp to temp.next
+            }else {
+                temp.next=head2;
+                head2=head2.next;
+                temp=temp.next;
+            }
+        }
+            while(head1!=null){
+                temp.next=head1;
+                head1=head1.next;
+                temp=temp.next;
+            }
+             while(head2!=null){
+                temp.next=head2;
+                head2=head2.next;
+                temp=temp.next;
+            }
+            return mergeLL.next;
+          } 
+
+
     public Node margeSort(Node head){
         //base case
-        if(head==null && head.next!=null){
+        if(head==null || head.next==null){
             //head ki value null ho jaye ya head.next ki value null ho jaye
             //in that case my linkedlist already sorted us time muje return head karnar hai
             return head;
         }
 
         //Findmid
-        Node mid=getmid();
+        Node mid=getmid(head);
         //left and right ms
 
         Node righthead=mid.next;//right half ka head that will be my mid ka next
@@ -337,13 +376,13 @@ public class Linkedlist{
 
 // ------------------------------------------------------------------------------------------------------------
     public static void main(String args[]){
-        Linkedlist l1=new Linkedlist();
+         Linkedlist l1=new Linkedlist();
         
-        l1.addFrist(2);        
-        l1.addFrist(1);      
-        l1.addLast(3); 
-        l1.addLast(4);
-        l1.add(2,9);
+        // l1.addFrist(2);        
+        // l1.addFrist(1);      
+        // l1.addLast(3); 
+        // l1.addLast(4);
+        // l1.add(2,9); 
         // l1.add(0,12);
         // l1.print();
         // l1.RemoveFrist();
@@ -352,13 +391,25 @@ public class Linkedlist{
         // l1.RemoveLast();
         // l1.print();
         // l1.reverse();
-        l1.print();
-        System.out.println(l1.checkpalindrom());
+        // l1.print();
+        // System.out.println(l1.checkpalindrom());
         // l1.deleteNthfromEnd(3);
         // l1.print();
         // System.out.println(l1.recursiveSerch(2));
         // System.out.println(l1.recursiveSerch(10));
-        
+        // LinkedList<Integer> ll=new LinkedList<>();   
+        l1.addFrist(1);
+        l1.addFrist(2);
+        l1.addFrist(3);
+        l1.addFrist(4);
+        l1.addFrist(5);
+       
+        l1.print();
+        // System.out.println(ll);
+        l1.head=l1.margeSort(l1.head);
+        l1.print();
+        // System.out.println(ll);
+
 
     }
 }
