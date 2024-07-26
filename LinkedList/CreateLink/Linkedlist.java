@@ -424,7 +424,7 @@ public class Linkedlist{
        
        
         l1.print();
-        l1.Zigzag();
+        l1.Zigzag
         // System.out.println(ll);
         // l1.head=l1.margeSort(l1.head);
         l1.print();

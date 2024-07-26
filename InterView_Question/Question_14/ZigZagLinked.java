@@ -9,9 +9,9 @@ public class ZigZagLinked{
             this.next=null;
         }
     }
-     public static Node head;
-    public static Node tail;
-    public static int size;
+        public static Node head;
+        public static Node tail;
+        public static int size;
 
     public void addFrist(int data){//method
         //step 1=create new node
@@ -42,7 +42,7 @@ public class ZigZagLinked{
     }
 
 
-     public void print(){
+        public void print(){
         //base case
         if(head==null){
             System.out.println("Linked List is Empty");
@@ -56,7 +56,7 @@ public class ZigZagLinked{
         System.out.println("null");
     }
 
-    public void Zigzag(){
+       public void Zigzag(){
             //find mid
             Node slow=head;
             Node fast=head.next;
@@ -96,15 +96,15 @@ public class ZigZagLinked{
             }
           }
 
-    public static void main(String args[]){
-        ZigZagLinked l1=new ZigZagLinked();
-         l1.addLast(1);
-        l1.addLast(2);
-        l1.addLast(3);
-        l1.addLast(4);
-        l1.addLast(5);
-         l1.print();
-        l1.Zigzag();
-        l1.print();
+            public static void main(String args[]){
+            ZigZagLinked l1=new ZigZagLinked();
+            l1.addLast(1);
+            l1.addLast(2);
+            l1.addLast(3);
+            l1.addLast(4);
+            l1.addLast(5);
+            l1.print();
+            l1.Zigzag();
+            l1.print();
     }
 }
