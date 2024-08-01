@@ -12,7 +12,7 @@ public class UseingLL{
     }
     // ------------------------------
     static class Stack{
-      static Node head=null;
+      static Node head=null;//At the starting head is null initil
 
       public static boolean isempty(){
         return head==null;
@@ -20,10 +20,10 @@ public class UseingLL{
 
     // push
     public static void push(int data){
-        Node newnode=new Node(data);
+        Node newnode=new Node(data);//New Node Created
         if(isempty()){
-            head=newnode;
-            return
+            head=newnode;//if LL is null than make head==newnode
+            return;
         }
      
         newnode.next=head;
@@ -34,8 +34,17 @@ public class UseingLL{
         if(isempty()){
             return -1;
         }
+        int top=head.data;
+        head=head.next;
+        return top;
     }
-
+        //peek
+        public static int peek(){
+             if(isempty()){
+            return -1;
+        }
+        return head.data;
+        }
     }
     
     
@@ -45,8 +54,8 @@ public class UseingLL{
         s.push(2);
         s.push(3);
        while(!s.isempty()){//till the stack is not empty
-        System.out.println(s.Peek());
-        s.Pop();
+        System.out.println(s.peek());
+        s.pop();
 
        }
     }

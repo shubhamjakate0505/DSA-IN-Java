@@ -13,3 +13,7 @@ Push Opratin in Linked List :-
 
 pop Opratin in Linked List :-
 ![alt text](image-1.png)
+
+* Collection Framework
+
+Stack<Integer> s=new Stack<>();
