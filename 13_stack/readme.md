@@ -16,4 +16,15 @@ pop Opratin in Linked List :-
 
 * Collection Framework
 
-Stack<Integer> s=new Stack<>();
+  Stack<Integer> s=new Stack<>();
+
+
+# Asked Question
+
+1. Push at the Bottom of the Stack
+
+* Apporch : - Use Recursion
+
+1. Pop all element in Given stack
+2. push Element 
+3. push all Remove Element in stack
