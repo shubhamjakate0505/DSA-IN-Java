@@ -35,9 +35,40 @@ Ans ->
 .
 ![alt text](image-3.png)
 
-------------------------------------------------------------------***--------------------------------------------------------------------
+------------------------------------------------------------------***-----------------------------------------------------------------------
 
 2. Reverse a String using a Stack ?
 Ans-> Apporach
 
 ![alt text](image-4.png)
+
+------------------------------------------------------------------***-----------------------------------------------------------------------
+
+3. Reverse a Stack
+
+Ans -> Use Recursion Apporch
+1. Pop All element in stack
+2. Push remove element at the Bottom of Stack.
+3. if we are pushing element at botton position than next element is at bottom and inside element get top position.
+
+![alt text](image-5.png)
+
+# Stack visualizetion
+
+![alt text](image-6.png)
+
+
+------------------------------------------------------------------***-----------------------------------------------------------------------
+
+## Most Important Question
+
+4. Stock Span Problum
+ 
+Ans -> 
+
+Note :- 
+    Stock :- its given in All Question.
+    span :-max no of consecutive days for which price <= todays price   
+    "which stock is grater or equl to of curr price as comparing with Previus Stock price calculate Diff between tham"
+
+![alt text](image-7.png)
