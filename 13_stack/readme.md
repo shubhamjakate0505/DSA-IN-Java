@@ -21,7 +21,9 @@ pop Opratin in Linked List :-
 
 # Asked Question
 
-1. Push at the Bottom of the Stack
+1. Push at the Bottom of the Stack ?
+
+Ans ->
 
 * Apporch : - Use Recursion
 
@@ -32,3 +34,10 @@ pop Opratin in Linked List :-
 ![alt text](image-2.png)
 .
 ![alt text](image-3.png)
+
+------------------------------------------------------------------***--------------------------------------------------------------------
+
+2. Reverse a String using a Stack ?
+Ans-> Apporach
+
+![alt text](image-4.png)
