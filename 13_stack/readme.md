@@ -6,3 +6,10 @@ The stack is a linear data structure that is used to store the collection of obj
 1. Push O(1) -Add Element 
 2. push O(1) -Remove Element 
 3. Peek O(1)- retrive or fetched frist element in Stack (Jakana)
+
+Push Opratin in Linked List :- 
+
+![alt text](image.png)
+
+pop Opratin in Linked List :-
+![alt text](image-1.png)

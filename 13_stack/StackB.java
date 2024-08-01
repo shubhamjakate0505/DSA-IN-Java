@@ -26,6 +26,9 @@ public class StackB{
         //peek (Jakana in stack)
 
         public static int Peek(){
+             if(isempty()){//if the stack is empty return true
+                return -1;
+            }
             return list.get(list.size()-1);
         }
 
