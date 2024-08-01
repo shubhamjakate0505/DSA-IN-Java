@@ -28,3 +28,7 @@ pop Opratin in Linked List :-
 1. Pop all element in Given stack
 2. push Element 
 3. push all Remove Element in stack
+
+![alt text](image-2.png)
+.
+![alt text](image-3.png)
