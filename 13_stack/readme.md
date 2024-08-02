@@ -71,4 +71,54 @@ Note :-
     span :-max no of consecutive days for which price <= todays price   
     "which stock is grater or equl to of curr price as comparing with Previus Stock price calculate Diff between tham"
 
+    Span=i(curr idx)-prevhigh idx
+    100=1-0=1
+        2-1=1
+        3-1=2
+
 ![alt text](image-7.png)
+    
+------------------------------------------------------------------***-----------------------------------------------------------------------
+# Important Question
+5. Next Grater Element 
+
+The next Grater Element of some element X in an Array is the Frist grater
+element that is to the Right of x in the same array.
+
+arr=[6,8,0,1,3]
+next greater=[8,-1,1,3,-1]
+
+Ans ->
+1. while(s.empty()){
+    stack[top]<=arr[i]
+    s.pop()
+}
+2. if stack empty{
+    nextgrater=-1
+    else 
+    nextgrater=s.peek();
+}
+3. s.push(ele)
+
+
+------------------------------------------------------------------***-----------------------------------------------------------------------
+
+6. valide Parenthsese
+
+![alt text](image-8.png)
+
+Ans->
+
+Apporch
+
+![alt text](image-9.png)
+
+
+------------------------------------------------------------------***-----------------------------------------------------------------------
+7. Duplicate Paaranthese
+
+![alt text](image-10.png)
+
+Ans ->
+
+![alt text](image-11.png)
