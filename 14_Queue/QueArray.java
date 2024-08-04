@@ -26,6 +26,6 @@ public class QueArray{
         arr[rear]=data;
     }
     public static void main(String args[]){
-
+println("sdklds");
     }
 }
