@@ -25,7 +25,14 @@ public class QueArray{
         rear=rear+1;
         arr[rear]=data;
     }
+    //remove
+    public static int Remove(){
+        if(isEmpty()){
+            System.out.println("Empty Queue");
+            return -1;
+        }
+    }
     public static void main(String args[]){
-println("sdklds");
+
     }
 }
