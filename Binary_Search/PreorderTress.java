@@ -24,10 +24,78 @@ public class PreorderTress{
         newnode.right=buildTree(nodes);
         
         return newnode;
-        }
+      
+      }
 
+
+      //preoder
+
+    public static void preoder(Node root){
+        if(root==null){
+            return;
+        }
+        
+        //1)root
+        //2)left
+        //3)right
+        System.out.print(root.data+" ");
+        preoder(root.left);
+        preoder(root.right);
+        }
+    //inorder
+
+    public static void inoder(Node root){
+        if(root==null){
+            return;
+        }
+        
+        inoder(root.left);
+        System.out.print(root.data+" ");
+        inoder(root.right);
     }
 
+    public static void postoder(Node root){
+        if(root==null){
+            return;
+        }
+        postoder(root.left);
+        postoder(root.right);
+        System.out.print(root.data+" ");
+    }
+
+    //level order
+    public static void leveup(Node root){
+        if(root==null){
+           return;
+        }
+        Queue<Node> q=new LinkedList<>();
+        q.add(root);
+        q.add(null);
+        while(!q.isEmpty()){
+            Node currNode=q.remove();
+            if(currNode==null){
+                System.out.println();
+                if(q.isEmpty()){
+                    break;
+                }else{
+                    q.add(null);
+                }
+            }else{
+                System.out.print(currNode.data+" ");
+                if(currNode.left!=null){
+                    q.add(currNode.left);
+                }
+
+                if(currNode.right!=null){
+                    q.add(currNode.right);
+                }
+            }
+        }
+    }
+
+
+    }
+    
 
 
 
@@ -36,6 +104,9 @@ public class PreorderTress{
         int nodes[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         BinaryTree tree=new BinaryTree();
         Node root=tree.buildTree(nodes);
-        System.out.println(root.data);
+        // System.out.println(root.data);
+        // tree.preoder(root);
+        // tree.postoder(root);
+        tree.leveup(root);
     }
 }
