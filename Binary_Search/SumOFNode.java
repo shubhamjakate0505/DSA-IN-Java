@@ -32,7 +32,7 @@ public class SumOFNode{
         root.right.right=new Node(6);
         root.right.left=new Node(7);
 
-        System.out.println(sum(root));
+        System.out.println(sum(root))
 
     }
 }
